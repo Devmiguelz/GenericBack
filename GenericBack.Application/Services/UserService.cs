@@ -2,10 +2,11 @@
 using GenericBack.Domain.Entities;
 using AutoMapper;
 using GenericBack.Domain.Interfaces;
+using GenericBack.Application.Interfaces;
 
 namespace GenericBack.Application.Services
 {
-    public class UserService
+    public class UserService: IUserService
     {
         private readonly IUserRepository _repository;
         private readonly IMapper _mapper;

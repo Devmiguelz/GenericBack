@@ -20,6 +20,9 @@ namespace GenericBack.Infrastructure.Repository
         public async Task<User?> GetByIdAsync(Guid id)
             => await _context.Users.FindAsync(id);
 
+        public async Task<User?> GetByEmailAsync(string email)
+            => await _context.Users.FirstOrDefaultAsync(x => x.Email == email);
+
         public async Task AddAsync(User user)
         {
             _context.Users.Add(user);

@@ -1,5 +1,5 @@
 ﻿using GenericBack.Application.DTOs;
-using GenericBack.Application.Services;
+using GenericBack.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GenericBack.Api.Controllers
@@ -8,9 +8,9 @@ namespace GenericBack.Api.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly UserService _service;
+        private readonly IUserService _service;
 
-        public UserController(UserService service)
+        public UserController(IUserService service)
         {
             _service = service;
         }
